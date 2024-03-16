@@ -10,7 +10,7 @@ resources:
 - repo: self
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: free-pipeline
 
 steps:
 - task: Docker@2
