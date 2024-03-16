@@ -15,11 +15,8 @@ pool:
 steps:
 
 - task: Docker@2
-  displayName: Build and Push
   inputs:
-    command: buildAndPush
-    containerRegistry: backend-docker-connection
+    containerRegistry: 'backend-docker-connection'
+    repository: 'syrewkam/todo-backend'
+    command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    repository: contosoRepository
-    tags: |
-      $(Build.BuildId)
