@@ -27,5 +27,5 @@ steps:
     command: push
     repository: 'kamilsyrewicz/todo-backend'
     tags: |
-      myapp-$(Build.BuildId)
+      kamilsyrewicz/todo-backend:myapp-$(Build.BuildId)
     dockerRegistryServiceConnection: 'backend-docker-connection'
