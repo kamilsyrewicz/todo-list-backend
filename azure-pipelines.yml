@@ -10,7 +10,7 @@ resources:
 - repo: self
 
 pool:
-  vmImage: free-pipeline
+  name: free-pipeline
 
 steps:
 - task: Docker@2
