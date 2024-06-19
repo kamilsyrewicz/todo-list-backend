@@ -1,17 +1,20 @@
-# Use the official Node.js 14 image as a parent image
-FROM node:14
+# Use a Node.js LTS version as base image
+FROM node:14-slim
 
-# Set the working directory within the container
-WORKDIR /usr/src/app
+# Set working directory
+WORKDIR /app
 
-# Copy package.json and package-lock.json (if available) to the container
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install any dependencies
-RUN npm install
+# Install dependencies
+RUN npm install --production
 
-# Copy the rest of your application's source code to the container
+# Copy application code
 COPY . .
 
-# Specify the command to run your app
+# Expose the port your app runs on
+EXPOSE 5001
+
+# Command to run the application
 CMD ["node", "index.js"]
